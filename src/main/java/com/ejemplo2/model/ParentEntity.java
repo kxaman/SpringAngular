@@ -10,9 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @MappedSuperclass
 @Access(AccessType.FIELD)
 public class ParentEntity implements Serializable{
@@ -22,8 +19,14 @@ public class ParentEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id", unique=true, nullable=false)
-	@Getter
-	@Setter
 	private Long id;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }
