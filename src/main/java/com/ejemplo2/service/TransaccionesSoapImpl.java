@@ -1,5 +1,7 @@
 package com.ejemplo2.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class TransaccionesSoapImpl implements TransaccionesSoapService {
 	@Override
 	public TransaccionesSoap save(TransaccionesSoap transaccionesSoap) {
 		return this.transaccionesSoapRepository.save(transaccionesSoap);
+	}
+
+	@Override
+	public List<TransaccionesSoap> findAll() {
+		return  this.transaccionesSoapRepository.findAll();
 	}
 
 }

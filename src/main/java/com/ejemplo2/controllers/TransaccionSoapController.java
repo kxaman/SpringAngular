@@ -3,6 +3,7 @@ package com.ejemplo2.controllers;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,11 @@ public class TransaccionSoapController {
 		return new RestResponse(HttpStatus.OK.value(), "Operacion Exitosa");
 	}
 
+	@RequestMapping(value = "/getTransaccionesSoap", method = RequestMethod.GET)
+	public List<TransaccionesSoap> getTransaccionesSoap() {
+		return this.transaccionesSoapService.findAll();
+	}
+	
 	private boolean validate(TransaccionesSoap transaccionesSoap,RestResponse restResponse) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		boolean isValid = true;

@@ -9,5 +9,5 @@ public interface TransaccionesSoapRepository extends JpaRepository<Transacciones
 	@SuppressWarnings("unchecked")
 	TransaccionesSoap save(TransaccionesSoap transaccionesSoap);
 	
-//	TransaccionesSoap findByNodo
+	//List<TransaccionesSoap> findAll();
 }
